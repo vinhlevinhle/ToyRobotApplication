@@ -22,9 +22,10 @@ This assume the end user is familiar with basic development on Windows using MS 
 1) Clone the ToyRobot from GitHub then load your Visual Studio IDE
 2) Open the project solution file ToyRobotApplication.sln under the root folder mention above
 3) To build this project in release mode by changing the build configuration manager from debug to release option.
-4) Then to launch the ToyRobot Console application that we just built, select 'Debug' from the top menu
-5) In the 'Debug' dropdown select the option 'Start Without Debugging'
-6) A black console window will display the welcome message with a menu item list explaining how to control the ToyRobot
+   Then along the top menu of your VS IDE, select the build tab which review the dropdown options, select 'Build Solution'  
+5) If the output windows indicate build succeeded, then to launch the ToyRobot Console application that we just built, select 'Debug' from the top menu
+6) In the 'Debug' dropdown select the option 'Start Without Debugging'
+7) A black console window will display the welcome message with a menu item list explaining how to control the ToyRobot
 
 To run the unit test, exit the ToyRobot Console application with 'q'
 1) Go back to VS IDE, from the 'Test' dropdown menu, select 'Run All Tests'
