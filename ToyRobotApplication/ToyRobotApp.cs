@@ -26,7 +26,10 @@ namespace ToyRobotApplication
 
                 string robotCommand = "Vinh Le";
 
-                BoardDimension bd = new BoardDimension();
+                // 30/11/21, VL , Iteration 1 , board dimemsion 8x8
+                uint newBDimWid = 8;
+                uint newBDimLen = 8;
+                BoardDimension bd = new BoardDimension(newBDimWid, newBDimLen);
                 BaseRobot toyRobot = new ToyRobot(bd);
                 InputParser inputParser = null;
 

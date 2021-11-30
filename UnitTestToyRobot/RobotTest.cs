@@ -50,6 +50,27 @@ namespace UnnitTestToyRobot
         }
 
         [TestMethod]
+        public void Test8x8BoardAndRobotValidity()
+        {
+            // Test the 8x8 board with none default contrustor 
+            BoardDimension board = new BoardDimension(8, 8);
+            Assert.IsNotNull(board);
+
+            uint expectedWidth = 8;
+            uint expectedLength = 8;
+            uint actualWidth = board.width;
+            uint actualLength = board.length;
+            Assert.AreEqual(expectedWidth, actualWidth);
+            Assert.AreEqual(expectedLength, actualLength);
+            // Test for fail condition
+            Assert.AreNotEqual(expectedLength, 16);
+
+            //A valid board dimension should not crash ToyRobot
+            BaseRobot toyRobot = new ToyRobot(board);
+            Assert.IsNotNull(toyRobot);
+        }
+
+        [TestMethod]
         public void TestInvalidPlacement()
         {
             // Default c'tor 5,5 board
