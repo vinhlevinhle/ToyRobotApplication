@@ -66,7 +66,7 @@ namespace RobotClassLibrary
                 //currentPosition = new Coordinate(coord.X, coord.Y, coord.dir);
                 currentPosition = new Coordinate(coord);
             }
-            else if (gotValidPlacement)
+            else if (!gotValidPlacement)
             {
                 currentPosition = null;
                 gotValidPlacement = false;
