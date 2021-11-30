@@ -126,6 +126,10 @@ namespace RobotClassLibrary
             }
         }
 
+        // 30/11/21, VL, iteration 2 required avoidance/obstruction command.
+        // Cannot avoid current valid coordinate
+        // Any place command with coordinates in the current list of avoidance coordinates, will be ignored.
+        // Move command will be discarded or ignored if encountered the list of avoidance coordinates.
         public override void Avoid(Coordinate avoidObst)
         {
             // add to list of avoidances
