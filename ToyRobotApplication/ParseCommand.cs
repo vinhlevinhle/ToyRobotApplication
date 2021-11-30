@@ -19,6 +19,8 @@ namespace ToyRobotApplication
         public ParseCommand()
         {
             foundCommand = "Nothing";
+            dir = Direction.NORTH; // Random assignment
+            
         }
 
         public void StartParsing(string command)
@@ -71,6 +73,20 @@ namespace ToyRobotApplication
                         break;
                 }
             }
+
+            //pattern = @"^(AVOID){1}\s(\d+),(\d+)\s*$";
+            //This pattern allows more than one spaces in between tokens
+            pattern = @"\s*(AVOID){1}\s*(\d+)\s*,\s*(\d+)\s*$";
+            matches = Regex.Matches(command, pattern, RegexOptions.IgnoreCase);
+            foreach (Match match in matches)
+            {
+                foundCommand = match.Groups[1].Value.ToUpper();
+                //Console.WriteLine("Found: " + foundCommand);
+                //Console.WriteLine("Found: " + match.Groups[1].Value);
+                X = (uint)Int64.Parse(match.Groups[2].Value);
+                Y = (uint)Int64.Parse(match.Groups[3].Value);
+               
+            }
         }
 
         public string GetCommand()
@@ -83,6 +99,17 @@ namespace ToyRobotApplication
             Coordinate temp = null;
 
             if (foundCommand == "PLACE")
+            {
+                temp = new Coordinate(X, Y, dir);
+            }
+            return temp;
+        }
+
+        public Coordinate GetAvoidCommandCoordinate()
+        {
+            Coordinate temp = null;
+
+            if (foundCommand == "AVOID")
             {
                 temp = new Coordinate(X, Y, dir);
             }

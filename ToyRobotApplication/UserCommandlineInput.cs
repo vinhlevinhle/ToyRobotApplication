@@ -34,6 +34,10 @@ namespace ToyRobotApplication
                         Coordinate coord = parser.GetPlaceCommandCoordinate();
                         toyRobot.Place(coord);
                         break;
+                    case "AVOID":
+                        Coordinate coordAvoid = parser.GetAvoidCommandCoordinate();
+                        toyRobot.Avoid(coordAvoid);
+                        break;
                     case "MOVE":
                         toyRobot.Move();
                         break;

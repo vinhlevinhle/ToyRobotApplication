@@ -11,6 +11,8 @@ namespace RobotClassLibrary
         public BoardDimension boardDimension { get; set; }
         public Coordinate currentPosition { get; set; }
 
+        public List<Coordinate> obstructionList { get; set; }
+
         public bool gotValidPlacement;
 
         public BaseRobot(BoardDimension bd)
@@ -20,13 +22,37 @@ namespace RobotClassLibrary
             gotValidPlacement = false;
         }
 
+        public bool inObstructionList(Coordinate coord)
+        {
+            bool retVal = false;
+
+            var item = obstructionList.FirstOrDefault<Coordinate>(i => i.X == coord.X && i.Y == coord.Y);
+            if (item != null)
+            {
+                retVal = true;
+            }
+
+            return retVal;
+        }
+
         public bool isValidPlacement(Coordinate coord)
         {
             bool retVal = false;
 
             if (coord != null)
             {
+                bool retValInObsList = inObstructionList(coord);
+
                 retVal = boardDimension.validCoordinate(coord.X, coord.Y);
+                
+                if (retVal && !retValInObsList)
+                {
+                    retVal = true;  
+                }
+                else
+                {
+                    retVal = false;
+                }
             }
 
             return retVal;
@@ -53,6 +79,9 @@ namespace RobotClassLibrary
         public abstract void TurnRight();
 
         public abstract Coordinate Report();
+
+        //Iteration 2
+        public abstract void Avoid(Coordinate avoidObst);
 
     }
 }

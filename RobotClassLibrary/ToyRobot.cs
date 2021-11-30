@@ -17,6 +17,8 @@ namespace RobotClassLibrary
             boardDimension = bd;
             currentPosition = null;
             gotValidPlacement = false;
+
+            obstructionList = new List<Coordinate>();
         }
 
         /// <summary>
@@ -121,6 +123,15 @@ namespace RobotClassLibrary
                 // invalid coordinate , or null!
                 // May be throw an exception here
                 return null;
+            }
+        }
+
+        public override void Avoid(Coordinate avoidObst)
+        {
+            // add to list of avoidances
+            if (isValidPlacement(avoidObst))
+            {
+                obstructionList.Add(avoidObst);
             }
         }
 
