@@ -129,7 +129,7 @@ namespace RobotClassLibrary
         public override void Avoid(Coordinate avoidObst)
         {
             // add to list of avoidances
-            if (isValidPlacement(avoidObst))
+            if (isValidAvoidanceCoordinate(avoidObst))
             {
                 obstructionList.Add(avoidObst);
             }

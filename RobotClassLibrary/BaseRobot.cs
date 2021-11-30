@@ -58,7 +58,37 @@ namespace RobotClassLibrary
             return retVal;
         }
 
-        public void Place(Coordinate coord)
+        public bool isNotAtCurrentPosition(Coordinate coord)
+        {
+            bool retVal = true;
+
+            if (coord != null)
+            {              
+                if (coord.X == currentPosition.X && coord.Y == currentPosition.Y)
+                {
+                    retVal = false;
+                }              
+            }
+
+            return retVal;
+        }
+
+        public bool isValidAvoidanceCoordinate(Coordinate coord)
+        {
+            bool retVal = true;
+
+            if (coord != null)
+            {
+                if (!isNotAtCurrentPosition(coord) || !boardDimension.validCoordinate(coord.X, coord.Y))
+                {
+                    retVal = false;
+                }              
+            }
+
+            return retVal;
+        }
+
+            public void Place(Coordinate coord)
         {
             if (isValidPlacement(coord))
             {
