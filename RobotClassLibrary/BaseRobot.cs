@@ -96,6 +96,7 @@ namespace RobotClassLibrary
                 //currentPosition = new Coordinate(coord.X, coord.Y, coord.dir);
                 currentPosition = new Coordinate(coord);
             }
+            // Bug fix here 30/11/21 should be != to
             else if (!gotValidPlacement)
             {
                 currentPosition = null;

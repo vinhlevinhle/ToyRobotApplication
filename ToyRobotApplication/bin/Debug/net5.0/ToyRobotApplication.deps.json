@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ToyRobotApplication/1.0.0": {
+        "dependencies": {
+          "RobotClassLibrary": "1.0.0"
+        },
+        "runtime": {
+          "ToyRobotApplication.dll": {}
+        }
+      },
+      "RobotClassLibrary/1.0.0": {
+        "runtime": {
+          "RobotClassLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ToyRobotApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RobotClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

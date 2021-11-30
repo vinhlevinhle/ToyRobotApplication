@@ -1,0 +1,6 @@
+D:\DevStuff\Github-local\ToyRobotApplication\RobotClassLibrary\bin\Debug\RobotClassLibrary.dll
+D:\DevStuff\Github-local\ToyRobotApplication\RobotClassLibrary\bin\Debug\RobotClassLibrary.pdb
+D:\DevStuff\Github-local\ToyRobotApplication\RobotClassLibrary\obj\Debug\RobotClassLibrary.csproj.AssemblyReference.cache
+D:\DevStuff\Github-local\ToyRobotApplication\RobotClassLibrary\obj\Debug\RobotClassLibrary.csproj.CoreCompileInputs.cache
+D:\DevStuff\Github-local\ToyRobotApplication\RobotClassLibrary\obj\Debug\RobotClassLibrary.dll
+D:\DevStuff\Github-local\ToyRobotApplication\RobotClassLibrary\obj\Debug\RobotClassLibrary.pdb
